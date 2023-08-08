@@ -16,12 +16,8 @@
 
   <ItemGroup>
     <None Remove="Entities\" />
-    <None Remove="Repositories\" />
-    <None Remove="Repositories\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\Interfaces\" />
   </ItemGroup>
 </Project>
