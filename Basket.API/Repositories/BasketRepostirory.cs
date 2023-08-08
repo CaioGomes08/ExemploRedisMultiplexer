@@ -34,6 +34,7 @@ namespace Basket.API.Repositories
 
             return await GetBasket(basket.UserName);
         }
+
         public async Task DeleteBasket(string userName)
         {
             IDatabase database = _redisCache.GetDatabase();

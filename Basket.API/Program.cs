@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Basket.API.Repositories;
+using Basket.API.Repositories.Interface;
+using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(new ConfigurationOptions
 {
     EndPoints = { builder.Configuration.GetValue<string>("CacheSettings:ConnectionString") },
